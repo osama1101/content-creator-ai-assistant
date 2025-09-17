@@ -1,7 +1,13 @@
-# Fix for ChromaDB SQLite compatibility on Streamlit Cloud
-import sys
-__import__('pysqlite3')
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# Fix for ChromaDB SQLite compatibility on Streamlit Cloud only
+try:
+    import streamlit.web.cli as stcli
+    # Only apply fix when running on Streamlit Cloud
+    import sys
+    __import__('pysqlite3')
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+except (ImportError, ModuleNotFoundError):
+    # Running locally or pysqlite3 not available, use regular sqlite3
+    pass
 
 import streamlit as st
 from openai import OpenAI
