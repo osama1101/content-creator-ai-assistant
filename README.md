@@ -12,7 +12,7 @@ An AI-powered script editor that helps content creators improve their drafts usi
 1. Clone the repository
 2. Install dependencies: `pip install -r requirements.txt`
 3. Create `.env` file with your API keys
-4. 4. Run: `streamlit run app.py`
+4. Run: `streamlit run app.py`
 
 ## Deployment
 This app is deployed on Streamlit Cloud. API keys are configured as environment variables in the deployment settings.
