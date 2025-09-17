@@ -2,5 +2,6 @@ streamlit
 openai
 anthropic
 python-dotenv
-chromadb
+chromadb==0.4.15
 SpeechRecognition
+pysqlite3-binary
